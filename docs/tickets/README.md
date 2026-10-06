@@ -6,7 +6,7 @@ dran sind (Ergebnisse vorheriger Tickets fließen ein).
 | ID | Titel | Status | Schätzung |
 |---|---|---|---|
 | [T00](T00-tooling.md) | Projektgerüst und Qualitäts-Gates | Erledigt | 3 h |
-| [T01](T01-dip-ingest.md) | DIP-Ingest-Grundgerüst | Offen | 3 h |
+| [T01](T01-dip-ingest.md) | DIP-Ingest-Grundgerüst | In Review | 3 h |
 | [T01b](T01b-keyword-vorfilter.md) | Keyword-Vorfilter, Explorations-Report, Label-Stichprobe | Offen | 2 h |
 | T02 | Ergebnisse auswerten, Keywords nachschärfen (Owner) | Entwurf | 1,5 h |
 | T03 | Eval-Testset labeln, Recall/Präzision messen (Owner) | Entwurf | 2 h |
