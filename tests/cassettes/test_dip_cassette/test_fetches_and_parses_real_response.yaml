@@ -1,0 +1,295 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - search.dip.bundestag.de
+      user-agent:
+      - python-httpx/0.28.1
+    method: GET
+    uri: https://search.dip.bundestag.de/api/v1/vorgang?f.datum.end=2026-09-01&f.datum.start=2026-09-01
+  response:
+    body:
+      string: "{\"numFound\":23,\"documents\":[{\"id\":\"338726\",\"abstract\":\"(insgesamt
+        17 Einzelfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Au\xDFenpolitik und internationale Beziehungen\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-28T07:11:07+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Asylbewerber\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"B\xFCrgerkrieg\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Christentum\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Entwicklungszusammenarbeit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Fl\xFCchtling\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Fl\xFCchtlingshilfe\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Friedenssicherung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Humanit\xE4re
+        Hilfe\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Islamismus\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Jemen\",\"typ\":\"Geograph.
+        Begriffe\"},{\"fundstelle\":false,\"name\":\"Menschenhandel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Religi\xF6se
+        Minderheit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Religi\xF6se
+        Verfolgung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"R\xFCckf\xFChrung
+        ausreisepflichtiger Personen\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sklaverei\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Lage
+        der christlichen Minderheit im Jemen im Kontext des langj\xE4hrigen B\xFCrgerkriegs
+        und der dschihadistischen Bedrohung\",\"datum\":\"2026-09-22\"},{\"id\":\"338728\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Raumordnung, Bau- und Wohnungswesen\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-18T08:32:20+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Datenerhebung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Evaluation\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Gesetz
+        zur Modernisierung des St\xE4dtebau- und Raumordnungsrechts\",\"typ\":\"Rechtsmaterialien\"},{\"fundstelle\":false,\"name\":\"Gesetzesfolgenabsch\xE4tzung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Immobilien\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Kommunale
+        Gebietsk\xF6rperschaft\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Vorkaufsrecht\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Wohnimmobilien\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Datengrundlage,
+        Kosten und Erfolgskontrolle der Bundesinstrumente gegen Problemimmobilien\",\"datum\":\"2026-09-14\"},{\"id\":\"338795\",\"vorgangstyp\":\"EU-Vorlage\",\"typ\":\"Vorgang\",\"wahlperiode\":21,\"kom\":\"(2026)
+        600 endg.\",\"initiative\":[\"Europ\xE4ische Kommission\"],\"aktualisiert\":\"2026-09-29T11:06:30+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Netzentgelt\",\"typ\":\"Freier
+        Deskriptor\"},{\"fundstelle\":false,\"name\":\"Stromnetz\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Strompreis\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Verordnung
+        der EU\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Vorschlag f\xFCr eine Verordnung
+        des Europ\xE4ischen Parlaments und des Rates zur \xC4nderung der Verordnung
+        (EU) 2019/943 im Hinblick auf zukunftssichere Stromrechnungen in der Union
+        durch Senkung der Systemkosten und F\xF6rderung der Elektrifizierung und Digitalisierung\\r\\nKOM(2026)
+        600 endg.; Ratsdok. 12071/26\",\"datum\":\"2026-09-11\"},{\"id\":\"338669\",\"vorgangstyp\":\"EU-Vorlage\",\"typ\":\"Vorgang\",\"wahlperiode\":21,\"kom\":\"(2026)
+        560 endg.\",\"initiative\":[\"Europ\xE4ische Kommission\"],\"aktualisiert\":\"2026-09-29T11:06:30+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Richtlinie
+        der EU\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Wettbewerb\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Wirtschaftsf\xF6rderung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Wirtschaftspolitik\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Wirtschaftswachstum\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Vorschlag
+        f\xFCr eine Richtlinie des Rates zur \xC4nderung der Richtlinien 2003/49/EG,
+        2009/133/EG, 2011/96/EU, (EU) 2016/1164, (EU) 2017/1852 und (EU) 2025/50 im
+        Hinblick auf die Vereinfachung des Unionsrahmens f\xFCr direkte Steuern und
+        die F\xF6rderung von Wachstum und Wettbewerbsf\xE4higkeit der EU\\r\\nKOM(2026)
+        560 endg.; Ratsdok. 11141/26\",\"datum\":\"2026-09-11\"},{\"id\":\"338627\",\"vorgangstyp\":\"EU-Vorlage\",\"typ\":\"Vorgang\",\"wahlperiode\":21,\"kom\":\"(2026)
+        313 endg.\",\"initiative\":[\"Europ\xE4ische Kommission\"],\"aktualisiert\":\"2026-09-29T11:06:30+02:00\",\"deskriptor\":[{\"fundstelle\":true,\"name\":\"Beweis\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Europ\xE4ische
+        Ermittlungsanordnung\",\"typ\":\"Freier Deskriptor\"},{\"fundstelle\":true,\"name\":\"Rechtshilfe
+        in Strafsachen\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Richtlinie
+        der EU\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Telekommunikations\xFCberwachung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Video\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Zusammenarbeit
+        in den Bereichen Justiz und Inneres\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Vorschlag
+        f\xFCr eine Richtlinie des Europ\xE4ischen Parlaments und des Rates \xFCber
+        die Europ\xE4ische Ermittlungsanordnung in Strafsachen und die Europ\xE4ische
+        Fernteilnahmeanordnung (Neufassung)\\r\\nKOM(2026) 313 endg.; Ratsdok. 11274/26\",\"datum\":\"2026-09-11\"},{\"id\":\"338732\",\"beratungsstand\":\"Noch
+        nicht beraten\",\"vorgangstyp\":\"Antrag\",\"sachgebiet\":[\"Medien, Kommunikation
+        und Informationstechnik\",\"Staat und Verwaltung\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        B\xDCNDNIS 90/DIE GR\xDCNEN\"],\"aktualisiert\":\"2026-09-08T17:05:17+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Auskunfterteilung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Auskunftspflicht\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesbeauftragter
+        f\xFCr den Datenschutz und die Informationsfreiheit\",\"typ\":\"Institutionen\"},{\"fundstelle\":false,\"name\":\"Bundesbeh\xF6rde\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Digitalisierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"E-Government\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Gesetzgebung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Grundgesetz\",\"typ\":\"Rechtsmaterialien\"},{\"fundstelle\":true,\"name\":\"Informationsfreiheit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Informationsfreiheitsgesetz\",\"typ\":\"Rechtsmaterialien\"},{\"fundstelle\":false,\"name\":\"Journalist\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Open
+        Data\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Transparenz\",\"typ\":\"Freier
+        Deskriptor\"},{\"fundstelle\":false,\"name\":\"Verwaltungsmodernisierung\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Informationsfreiheit
+        st\xE4rken statt beschneiden - F\xFCr ein Bundestransparenzgesetz und ein
+        Recht auf Open Data\",\"datum\":\"2026-09-01\"},{\"id\":\"338729\",\"abstract\":\"(insgesamt
+        32 Einzelfragen)\",\"beratungsstand\":\"Noch nicht beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Au\xDFenpolitik und internationale Beziehungen\",\"Soziale
+        Sicherung\",\"\xD6ffentliche Finanzen, Steuern und Abgaben\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-30T18:26:18+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Bundeshaushalt\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesmittel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"EU-Erweiterung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Finanzplanung
+        des Bundes\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Finanzpolitik\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Gesundheitswesen\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Haushaltspolitik\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Humanit\xE4re
+        Hilfe\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Infrastruktur\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Investition\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Investitionsf\xF6rderung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Koh\xE4sionspolitik\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Milit\xE4rhilfe\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sanierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sonderverm\xF6gen\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Soziale
+        Sicherung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sozialversicherung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Ukraine\",\"typ\":\"Geograph.
+        Begriffe\"},{\"fundstelle\":false,\"name\":\"Verpflichtungserm\xE4chtigung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Wiederaufbau\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"\xD6ffentliche
+        Ausgaben\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"\xD6ffentliche
+        Investition\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"\xD6ffentliche
+        Mittel\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Finanzielle Verpflichtungen
+        Deutschlands gegen\xFCber der Ukraine, Investitions- und Sanierungsbedarf
+        im Inland und finanzpolitischer Handlungsspielraum des Bundes\",\"datum\":\"2026-09-01\"},{\"id\":\"338727\",\"abstract\":\"(insgesamt
+        23 Einzelfragen)\",\"beratungsstand\":\"Noch nicht beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Energie\",\"Raumordnung, Bau- und Wohnungswesen\",\"Umwelt\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-30T17:15:54+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Baukosten\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bauplanung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bericht
+        der Bundesregierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Bundesimmobilien\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesministerium\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesverwaltung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Energieeinsparung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Energieverbrauch\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Geb\xE4udeenergieeffizienz\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Geb\xE4udeenergiegesetz\",\"typ\":\"Rechtsmaterialien\"},{\"fundstelle\":false,\"name\":\"Gesetz
+        zur \xC4nderung des Geb\xE4udeenergiegesetzes, zur \xC4nderung des Geb\xE4ude-Elektromobilit\xE4tsinfrastruktur-Gesetzes
+        und zur \xC4nderung weiterer Vorschriften im W\xE4rmebereich\",\"typ\":\"Rechtsmaterialien\"},{\"fundstelle\":false,\"name\":\"Gesetzesfolgenabsch\xE4tzung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Klimaschutz\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Neubau\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"W\xE4rmed\xE4mmung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"W\xE4rmetechnik\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"\xD6ffentliche
+        Investition\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"\xD6ffentliches
+        Bauvorhaben\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"\xD6kologisches
+        Bauen\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Folgen des Geb\xE4udemodernisierungsgesetzes
+        (vormals Geb\xE4udeenergiegesetz) f\xFCr die Bauten des Bundes und der Bundesministerien\",\"datum\":\"2026-09-01\"},{\"id\":\"338722\",\"abstract\":\"(insgesamt
+        32 Einzelfragen)\",\"beratungsstand\":\"Noch nicht beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Raumordnung, Bau- und Wohnungswesen\",\"Staat
+        und Verwaltung\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-04T17:10:43+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Bausanierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesbeh\xF6rde\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundeshaushalt
+        2027\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Bundesimmobilien\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesmittel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Geb\xE4ude\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Geb\xE4ude-Elektromobilit\xE4tsinfrastruktur-Gesetz\",\"typ\":\"Rechtsmaterialien\"},{\"fundstelle\":false,\"name\":\"Kosten\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Kosten-Nutzen-Analyse\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Ladeinfrastruktur\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Neubau\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Parkfl\xE4che\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Programm
+        der Bundesregierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Wirtschaftlichkeit\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Anforderungen
+        des Geb\xE4ude-Elektromobilit\xE4tsinfrastruktur-Gesetzes an Geb\xE4ude des
+        Bundes nach der Novelle 2026: Erf\xFCllungsstand, Kosten und F\xF6rderung\",\"datum\":\"2026-09-01\"},{\"id\":\"338712\",\"abstract\":\"(insgesamt
+        41 Einzelfragen)\",\"beratungsstand\":\"Noch nicht beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Gesundheit\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        B\xDCNDNIS 90/DIE GR\xDCNEN\"],\"aktualisiert\":\"2026-09-24T19:38:37+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Fr\xFCherkennung
+        von Krankheiten\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Gesundheitserziehung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Gesundheitsschutz\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Gesundheitsvorsorge\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Infektionskrankheit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Medizinische
+        Behandlung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Medizinische
+        Versorgung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Notfallmedizin\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Programm
+        der Bundesregierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sepsis\",\"typ\":\"Freier
+        Deskriptor\"},{\"fundstelle\":false,\"name\":\"Sterblichkeit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Weltgesundheitsorganisation\",\"typ\":\"Institutionen\"}],\"titel\":\"Acht
+        Jahre nach der WHO-Sepsis-Resolution - Stand einer nationalen Sepsis-Strategie
+        in Deutschland\",\"datum\":\"2026-09-01\"},{\"id\":\"338457\",\"abstract\":\"(insgesamt
+        10 Einzelfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Deutsche Einheit / Innerdeutsche Beziehungen (bis
+        1990)\",\"Staat und Verwaltung\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-08T08:21:10+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Bundesbediensteter\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesunternehmen\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Bundesverwaltung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Datenerhebung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Dienstaufsicht\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Externe
+        Beratung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Ministerium
+        f\xFCr Staatssicherheit der DDR\",\"typ\":\"Institutionen\"},{\"fundstelle\":false,\"name\":\"Sachverst\xE4ndiger\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sicherheitsbeh\xF6rde\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Spitzel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Stasi-\xDCberpr\xFCfung\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Pr\xE4senz
+        ehemaliger hauptamtlicher und inoffizieller Mitarbeiter des Ministeriums f\xFCr
+        Staatssicherheit der DDR im \xF6ffentlichen Dienst des Bundes\",\"datum\":\"2026-09-01\"},{\"id\":\"338456\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Recht\",\"Staat und Verwaltung\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-08T08:21:26+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Bundeskanzler\",\"typ\":\"Institutionen\"},{\"fundstelle\":false,\"name\":\"Bundesminister\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Bundesregierung\",\"typ\":\"Institutionen\"},{\"fundstelle\":false,\"name\":\"Ermittlungsverfahren\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Strafanzeige\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Durch
+        die Mitglieder der Bundesregierung erstattete Strafanzeigen in der 21. Legislaturperiode
+        - Stand 31. Juli 2026\",\"datum\":\"2026-09-01\"},{\"id\":\"338397\",\"abstract\":\"(insgesamt
+        4 Einzelfragen mit zahlreichen Unterfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Kultur\",\"Politisches Leben, Parteien\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-08T08:21:08+02:00\",\"vorgang_verlinkung\":[{\"verweisung\":\"Ausgangsanfrage\",\"titel\":\"Einhaltung
+        des gesetzlichen Stiftungszwecks und Mittelverwendung der Stiftung Erinnerung,
+        Verantwortung und Zukunft\",\"id\":\"334905\",\"wahlperiode\":21}],\"deskriptor\":[{\"fundstelle\":true,\"name\":\"Antisemitismus\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Attentat\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesmittel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"B\xFCrgerschaftliches
+        Engagement\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Diskriminierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Geschichte\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Islamismus\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"LSBTTIQ\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Politische
+        Bildung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Stiftung
+        Erinnerung, Verantwortung und Zukunft\",\"typ\":\"Institutionen\"},{\"fundstelle\":false,\"name\":\"Wiedergutmachung
+        nationalsozialistischen Unrechts\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Einhaltung
+        des gesetzlichen Stiftungszwecks und Mittelverwendung der Stiftung Erinnerung,
+        Verantwortung und Zukunft (Nachfrage zur Antwort der Bundesregierung auf die
+        Kleine Anfrage auf Bundestagsdrucksache 21/6318)\",\"datum\":\"2026-09-01\"},{\"id\":\"338391\",\"abstract\":\"(insgesamt
+        21 Einzelfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Au\xDFenpolitik und internationale Beziehungen\",\"Wissenschaft,
+        Forschung und Technologie\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-08T08:21:30+02:00\",\"deskriptor\":[{\"fundstelle\":true,\"name\":\"China\",\"typ\":\"Geograph.
+        Begriffe\"},{\"fundstelle\":false,\"name\":\"Forschungseinrichtung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Forschungskooperation\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Helmholtz-Gemeinschaft
+        Deutscher Forschungszentren\",\"typ\":\"Institutionen\"},{\"fundstelle\":false,\"name\":\"Informationssicherheit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Spionage\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Forschungssicherheit
+        in der Helmholtz-Gemeinschaft - Aufkl\xE4rung m\xF6glicher Wissensabfl\xFCsse
+        im Zusammenhang mit China\",\"datum\":\"2026-09-01\"},{\"id\":\"338383\",\"abstract\":\"(insgesamt
+        6 Einzelfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Arbeit und Besch\xE4ftigung\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-22T13:30:13+02:00\",\"deskriptor\":[{\"fundstelle\":true,\"name\":\"Arbeitsf\xF6rderung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Berufliche
+        Weiterbildung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"B\xFCrgergeld\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Erwerbst\xE4tigkeit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Kosten\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sozialgesetzbuch
+        III\",\"typ\":\"Rechtsmaterialien\"},{\"fundstelle\":false,\"name\":\"Sozialleistungsempf\xE4nger\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sozialversicherungspflicht\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"SGB-III-gef\xF6rderte
+        Weiterbildungen f\xFCr B\xFCrgergeldempf\xE4nger im Jahr 2025 und anschlie\xDFende
+        Aufnahme beitragspflichtiger Besch\xE4ftigung\",\"datum\":\"2026-09-01\"},{\"id\":\"338327\",\"abstract\":\"(insgesamt
+        17 Einzelfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Politisches Leben, Parteien\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        DIE LINKE\"],\"aktualisiert\":\"2026-09-08T08:21:22+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Beratung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundeshaushalt
+        2027\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesmittel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Bundesprogramm
+        Demokratie leben!\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesrechnungshof\",\"typ\":\"Institutionen\"},{\"fundstelle\":false,\"name\":\"Politische
+        Bildung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Programm
+        der Bundesregierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Projektf\xF6rderung\",\"typ\":\"Freier
+        Deskriptor\"},{\"fundstelle\":false,\"name\":\"Richtlinie der EU\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sachverst\xE4ndiger\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Ausgestaltung
+        und Umsetzung der Neuausrichtung von \\\"Demokratie leben!\\\"\",\"datum\":\"2026-09-01\"},{\"id\":\"338209\",\"abstract\":\"(insgesamt
+        32 Einzelfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Gesellschaftspolitik, soziale Gruppen\",\"Gesundheit\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        DIE LINKE\"],\"aktualisiert\":\"2026-09-23T09:08:57+02:00\",\"deskriptor\":[{\"fundstelle\":true,\"name\":\"Armut\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Beratungsstelle\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Chancengleichheit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Diskriminierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"GKV-Beitragssatzstabilisierungsgesetz\",\"typ\":\"Rechtsmaterialien\"},{\"fundstelle\":true,\"name\":\"Gesundheit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Gesundheitsberatung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Gesundheitskiosk\",\"typ\":\"Freier
+        Deskriptor\"},{\"fundstelle\":false,\"name\":\"Krankenversicherungsbeitrag\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Krankenversicherungsrecht\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Lebensbedingungen\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Medizinische
+        Einrichtung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Medizinische
+        Versorgung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Selbstbeteiligung
+        im Gesundheitswesen\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Soziale Ungleichheiten
+        in Gesundheit und Gesundheitsversorgung\",\"datum\":\"2026-09-01\"},{\"id\":\"338207\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Verkehr\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        DIE LINKE\"],\"aktualisiert\":\"2026-09-23T14:24:41+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Autobahn\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bahnstrecke\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesfernstra\xDFe\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesmittel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bundesstra\xDFe\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Landesmittel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"L\xE4nder
+        der Bundesrepublik Deutschland\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Stra\xDFenbau\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Streckenbau\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Streckenelektrifizierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Verkehrsinvestition\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Ausbau
+        von Bundesfernstra\xDFen und Schienenwegen des Bundes seit 2010\",\"datum\":\"2026-09-01\"},{\"id\":\"338066\",\"abstract\":\"(insgesamt
+        33 Einzelfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Migration und Aufenthaltsrecht\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-08T08:21:16+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Abschiebung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Asylbewerber\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Asylverfahren\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Aufenthaltsrecht\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Einwanderung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Fl\xFCchtlingspolitik\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Gef\xE4hrder\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Geldleistung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Internationale
+        Zusammenarbeit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Politische
+        Lage\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Programm
+        der Bundesregierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Rechtsmittel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"R\xFCckf\xFChrung
+        ausreisepflichtiger Personen\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Straft\xE4ter\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Syrien\",\"typ\":\"Geograph.
+        Begriffe\"},{\"fundstelle\":false,\"name\":\"Widerrufsverfahren\",\"typ\":\"Freier
+        Deskriptor\"}],\"titel\":\"Eineinhalb Jahre nach Ende des B\xFCrgerkrieges
+        - Sachstand zur R\xFCckkehr nach Syrien, zum Widerruf von Schutztiteln und
+        zur aktuellen Entscheidungspraxis \xFCber Antr\xE4ge syrischer Asylbewerber\",\"datum\":\"2026-09-01\"},{\"id\":\"338013\",\"abstract\":\"(insgesamt
+        18 Einzelfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Au\xDFenpolitik und internationale Beziehungen\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        der AfD\"],\"aktualisiert\":\"2026-09-08T08:21:18+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Asylbewerber\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Christentum\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Entwicklungszusammenarbeit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Fl\xFCchtlingshilfe\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Humanit\xE4re
+        Hilfe\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Islam\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Islamismus\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Menschenhandel\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Menschenrechte\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Religionsfreiheit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Religi\xF6se
+        Minderheit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Religi\xF6se
+        Verfolgung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"R\xFCckf\xFChrung
+        ausreisepflichtiger Personen\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Sklaverei\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":true,\"name\":\"Somalia\",\"typ\":\"Geograph.
+        Begriffe\"},{\"fundstelle\":false,\"name\":\"Zwangsarbeit\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Lage
+        der christlichen Minderheit in Somalia und die anhaltende Existenzbedrohung
+        durch dschihadistischen Terror und gesellschaftliche Verfolgung\",\"datum\":\"2026-09-01\"},{\"id\":\"337555\",\"abstract\":\"(insgesamt
+        96 Einzelfragen)\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Verkehr\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        B\xDCNDNIS 90/DIE GR\xDCNEN\"],\"aktualisiert\":\"2026-09-08T08:21:12+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Bahnhof\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bahnstrecke\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bahntechnik\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bahn\xFCbergang\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Barrierefreiheit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Baukosten\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bauma\xDFnahme\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bauplanung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Bauvorhaben\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Berlin\",\"typ\":\"Geograph.
+        Begriffe\"},{\"fundstelle\":false,\"name\":\"Deutsche Bahn\",\"typ\":\"Institutionen\"},{\"fundstelle\":false,\"name\":\"Fahrplan\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Genehmigung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Kosten-Nutzen-Analyse\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Lehrte\",\"typ\":\"Geograph.
+        Begriffe\"},{\"fundstelle\":false,\"name\":\"Mobilfunk\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Personalausstattung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Planfeststellung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Schienenersatzverkehr\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Signalanlage\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Stellwerk\",\"typ\":\"Freier
+        Deskriptor\"},{\"fundstelle\":true,\"name\":\"Streckenbau\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Streckenelektrifizierung\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Telekommunikationstechnik\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Wirtschaftlichkeit\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Zugbeeinflussungssystem\",\"typ\":\"Freier
+        Deskriptor\"}],\"titel\":\"Generalsanierung der Strecke Lehrte - Berlin\",\"datum\":\"2026-09-01\"},{\"id\":\"337405\",\"beratungsstand\":\"Beantwortet\",\"vorgangstyp\":\"Kleine
+        Anfrage\",\"sachgebiet\":[\"Migration und Aufenthaltsrecht\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Fraktion
+        DIE LINKE\"],\"aktualisiert\":\"2026-09-09T07:51:02+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Aufenthaltsrecht\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Fl\xFCchtling\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Zahlen
+        zu in der Bundesrepublik Deutschland lebenden Gefl\xFCchteten zum Stand 30.
+        Juni 2026\",\"datum\":\"2026-09-01\"},{\"id\":\"330422\",\"abstract\":\"Erweiterung
+        des Straftatbestandes auf das nicht \xF6ffentliche Verwenden von Kennzeichen
+        verfassungswidriger Organisationen\",\"beratungsstand\":\"Angenommen\",\"vorgangstyp\":\"Selbst\xE4ndiger
+        Antrag von L\xE4ndern auf Entschlie\xDFung\",\"sachgebiet\":[\"Recht\"],\"typ\":\"Vorgang\",\"wahlperiode\":21,\"initiative\":[\"Th\xFCringen\"],\"aktualisiert\":\"2026-09-06T15:31:54+02:00\",\"deskriptor\":[{\"fundstelle\":false,\"name\":\"Extremismus\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Schule\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Strafgesetzbuch\",\"typ\":\"Rechtsmaterialien\"},{\"fundstelle\":true,\"name\":\"Strafrecht\",\"typ\":\"Sachbegriffe\"},{\"fundstelle\":false,\"name\":\"Verfassungsfeindlichkeit\",\"typ\":\"Sachbegriffe\"}],\"titel\":\"Entschlie\xDFung
+        des Bundesrates zur strafrechtlichen Ahndung extremistischer Kennzeichen im
+        schulischen Bereich (\xA7 86a StGB)\",\"datum\":\"2026-09-01\"}],\"cursor\":\"recorded-cursor-1\"}"
+    headers:
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - origin, x-requested-with, content-type, authorization, content-disposition,
+        accept
+      access-control-allow-methods:
+      - OPTIONS,GET,PUT,POST,DELETE,HEAD
+      cache-control:
+      - no-transform, max-age=300
+      content-length:
+      - '29419'
+      content-type:
+      - application/json
+      date:
+      - Mon, 05 Oct 2026 06:34:03 GMT
+      server:
+      - Apache
+      strict-transport-security:
+      - max-age=31536000
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      - Origin
+      via:
+      - 1.1 search.dip.bundestag.de
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-permitted-cross-domain-policies:
+      - none
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+- request:
+    body: ''
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - search.dip.bundestag.de
+      user-agent:
+      - python-httpx/0.28.1
+    method: GET
+    uri: https://search.dip.bundestag.de/api/v1/vorgang?cursor=recorded-cursor-1&f.datum.end=2026-09-01&f.datum.start=2026-09-01
+  response:
+    body:
+      string: '{"numFound":23,"documents":[],"cursor":"recorded-cursor-1"}'
+    headers:
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - origin, x-requested-with, content-type, authorization, content-disposition,
+        accept
+      access-control-allow-methods:
+      - OPTIONS,GET,PUT,POST,DELETE,HEAD
+      cache-control:
+      - no-transform, max-age=300
+      content-length:
+      - '74'
+      content-type:
+      - application/json
+      date:
+      - Mon, 05 Oct 2026 06:34:04 GMT
+      server:
+      - Apache
+      strict-transport-security:
+      - max-age=31536000
+      vary:
+      - Accept-Encoding
+      - Origin
+      via:
+      - 1.1 search.dip.bundestag.de
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-permitted-cross-domain-policies:
+      - none
+      x-xss-protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
