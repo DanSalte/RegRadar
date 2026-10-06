@@ -1,0 +1,58 @@
+[project]
+name = "regradar"
+version = "0.1.0"
+description = "Regulatory monitoring for banks and insurers"
+license = "MIT"
+requires-python = ">=3.14"
+dependencies = [
+    "httpx>=0.28.1",
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+    "pyyaml>=6.0.3",
+    "structlog>=26.1.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "bandit>=1.9.4",
+    "deptry>=0.25.1",
+    "detect-secrets>=1.5.0",
+    "diff-cover>=10.6.0",
+    "import-linter>=2.15",
+    "mypy>=2.4.0",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "pytest-recording>=0.14.0",
+    "ruff>=0.16.10",
+    "types-pyyaml>=6.0.12.20260906",
+    "xenon>=0.9.3",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--strict-markers", "--block-network", "-m", "not live"]
+filterwarnings = ["error"]
+markers = [
+    "live: calls the real API; excluded by default, runs nightly in CI",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["regradar"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+[tool.deptry.per_rule_ignores]
+# Declared by T00 for upcoming tickets but not imported yet. Remove each
+# entry as soon as the package is used (T01).
+DEP002 = ["httpx", "pydantic", "pydantic-settings", "pyyaml", "structlog"]

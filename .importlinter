@@ -1,0 +1,22 @@
+[importlinter]
+root_package = regradar
+include_external_packages = True
+
+[importlinter:contract:layers]
+name = Layers: entrypoints > adapters > core.application > core.domain
+type = layers
+layers =
+    regradar.entrypoints
+    regradar.adapters
+    regradar.core.application
+    regradar.core.domain
+
+[importlinter:contract:domain-no-io]
+name = Domain imports no I/O libraries
+type = forbidden
+source_modules =
+    regradar.core.domain
+forbidden_modules =
+    httpx
+    pydantic_settings
+    structlog

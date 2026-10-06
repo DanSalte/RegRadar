@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+coverage.xml
+.coverage
+
+# Secrets
+.env
+
+# Daten-Cache
+data/raw/
+
+# Lokale Entwicklungsumgebung (Dev-Container, Claude Code)
+.devcontainer/
+.claude/
+
+# OS / Editor
+.DS_Store
+.idea/

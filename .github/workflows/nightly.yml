@@ -1,0 +1,31 @@
+name: Nightly live tests
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.2.0
+      - run: uv sync --locked
+      - name: Live tests
+        env:
+          DIP_API_KEY: ${{ secrets.DIP_API_KEY }}
+        # Overriding addopts drops --block-network and the "not live"
+        # filter. Exit code 5 means no live tests exist yet (until T01).
+        run: |
+          set +e
+          uv run --frozen pytest -o addopts="--strict-markers" -m live
+          code=$?
+          if [ "$code" -eq 5 ]; then
+            echo "::warning::No live tests collected"
+            exit 0
+          fi
+          exit "$code"

@@ -1,0 +1,35 @@
+# All hooks are local so they run behind the dev container firewall
+# without downloading hook repositories.
+default_install_hook_types: [pre-commit, pre-push]
+
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff check
+        entry: uv run --frozen ruff check --fix
+        language: system
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: ruff format
+        entry: uv run --frozen ruff format
+        language: system
+        types_or: [python, pyi]
+      - id: home-paths
+        name: no personal home paths
+        language: pygrep
+        # /home/vscode is the dev container user and not personal.
+        entry: '/Users/|/home/(?!vscode\b)[A-Za-z0-9._-]+|C:\\+Users\\+'
+        # These files describe the patterns themselves.
+        exclude: ^(\.pre-commit-config\.yaml|docs/tickets/T00-tooling\.md)$
+      - id: detect-secrets
+        name: detect-secrets
+        entry: uv run --frozen detect-secrets-hook --baseline .secrets.baseline
+        language: system
+      - id: make-check
+        name: make check
+        entry: make check
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
