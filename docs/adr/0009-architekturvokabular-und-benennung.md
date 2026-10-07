@@ -1,6 +1,6 @@
 # ADR-0009: Architekturvokabular und Benennung
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Datum:** 2026-10-06
 
 ## Kontext

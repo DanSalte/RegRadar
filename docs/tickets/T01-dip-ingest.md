@@ -1,6 +1,6 @@
 # T01 – DIP-Ingest-Grundgerüst
 
-- **Status:** In Review
+- **Status:** Erledigt
 - **Schätzung:** 3 h
 - **Abhängig von:** T00
 - **ADRs:** 0003, 0005, 0007, 0009
