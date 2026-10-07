@@ -1,6 +1,6 @@
 # T01 – DIP-Ingest-Grundgerüst
 
-- **Status:** Offen
+- **Status:** Erledigt
 - **Schätzung:** 3 h
 - **Abhängig von:** T00
 - **ADRs:** 0003, 0005, 0007, 0009
@@ -44,13 +44,13 @@ die CLI leicht dort einbinden.
 
 ## Akzeptanzkriterien
 
-- [ ] `make check` grün
-- [ ] Adapter-Tests mit VCR-Cassette (echte Antwort, Key gefiltert)
-- [ ] Tests für: Paginierung, Retry (429, Netzwerkfehler), kein Retry bei
+- [x] `make check` grün
+- [x] Adapter-Tests mit VCR-Cassette (echte Antwort, Key gefiltert)
+- [x] Tests für: Paginierung, Retry (429, Netzwerkfehler), kein Retry bei
       401, Rate-Limit, Dead-Letter, Duplikate, Abbruch bei systemischen
       Fehlern
-- [ ] Lauf mit `--months 1` erfolgreich, Rohdaten gespeichert
-- [ ] Zweiter Lauf ohne `--refresh` macht keine API-Aufrufe (Test)
-- [ ] Link-Format für DIP-Vorgänge verifiziert (im PR dokumentieren)
-- [ ] Fachkonzept und Architektur-Doku vorhanden, Benennung nach ADR-0009
-- [ ] Lauf über 6 Monate führt der Owner selbst durch
+- [x] Lauf mit `--months 1` erfolgreich, Rohdaten gespeichert
+- [x] Zweiter Lauf ohne `--refresh` macht keine API-Aufrufe (Test)
+- [x] Link-Format für DIP-Vorgänge verifiziert (im PR dokumentieren)
+- [x] Fachkonzept und Architektur-Doku vorhanden, Benennung nach ADR-0009
+- [x] Lauf über 6 Monate führt der Owner selbst durch

@@ -12,6 +12,9 @@ dependencies = [
     "structlog>=26.1.0",
 ]
 
+[project.scripts]
+regradar = "regradar.entrypoints.cli:main"
+
 [build-system]
 requires = ["uv_build>=0.12.23,<0.13.0"]
 build-backend = "uv_build"
@@ -52,7 +55,12 @@ show_missing = true
 [tool.coverage.xml]
 output = "coverage.xml"
 
+[tool.deptry]
+# src layout: deptry does not find the package in the project root and
+# would report every internal import as a transitive dependency (DEP003).
+known_first_party = ["regradar"]
+
 [tool.deptry.per_rule_ignores]
-# Declared by T00 for upcoming tickets but not imported yet. Remove each
-# entry as soon as the package is used (T01).
-DEP002 = ["httpx", "pydantic", "pydantic-settings", "pyyaml", "structlog"]
+# Used by the keyword configuration in T01b. Remove the entry once the
+# package is imported.
+DEP002 = ["pyyaml"]
