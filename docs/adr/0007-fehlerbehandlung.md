@@ -1,6 +1,7 @@
 # ADR-0007: Fehlerbehandlung – nicht abstürzen, nichts verschlucken
 
-- **Status:** Accepted
+- **Status:** Accepted; erneuter Versuch von Dead Letters ersetzt durch
+  [ADR-0010](0010-datenfluss-und-hosting.md)
 - **Datum:** 2026-10-02
 
 ## Kontext
