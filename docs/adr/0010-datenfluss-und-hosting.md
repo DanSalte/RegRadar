@@ -1,6 +1,6 @@
 # ADR-0010: Datenfluss und Hosting
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Datum:** 2026-10-07
 
 ## Kontext
