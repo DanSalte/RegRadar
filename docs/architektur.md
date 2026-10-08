@@ -1,5 +1,34 @@
 # Architektur RegRadar
 
+**RegRadar beobachtet Gesetzgebung und zeigt regulierten Branchen, was sie
+betrifft – am Beispiel von Banken und Versicherern.** Vorgänge aus Bundestag
+und Bundesrat (später EU) werden täglich geholt, einmal per LLM eingeordnet
+und im Browser filterbar gemacht. Weitere Branchen sind Konfiguration, kein
+Code; ihre Erkennung wird wie bei den Beispielen gegen ein gelabeltes Testset
+gemessen.
+
+- **Zero Cost:** Betrieb nur mit GitHub Actions, Releases und Pages. Kosten
+  entstehen nur für das LLM, höchstens 5–10 €/Monat
+  ([ADR-0010](adr/0010-datenfluss-und-hosting.md)).
+- **Serverless ETL:** Jeder Lauf schreibt eine DuckDB-Datei, das Frontend
+  liest sie per DuckDB-WASM direkt im Browser. Kein Server, keine externe
+  Datenbank ([ADR-0010](adr/0010-datenfluss-und-hosting.md)).
+- **Classify once, filter many:** Jeder Vorgang wird einmal mit festen
+  Vokabularen eingeordnet; Filtern kostet danach nichts mehr
+  ([ADR-0002](adr/0002-classify-once-filter-many.md)).
+- **Ports & Adapters:** Die Fachlogik kennt weder Quelle noch Speicher. Eine
+  neue Quelle ist ein neuer Adapter
+  ([ADR-0009](adr/0009-architekturvokabular-und-benennung.md)).
+- **Agent-driven Development:** Der Code entsteht mit einem KI-Agenten im
+  Dev-Container ([ADR-0008](adr/0008-agentische-entwicklung-im-dev-container.md)),
+  abgesichert durch deterministische Qualitäts-Gates in der CI
+  ([ADR-0006](adr/0006-qualitaets-gates.md)) und ein Review jedes PRs.
+
+**Stand:** Ingest aus DIP fertig (T01). Vorfilter, Klassifikation und Frontend
+folgen.
+
+## Über dieses Dokument
+
 Dieses Dokument erklärt die Architektur **am Projekt**: Jeder Begriff kommt mit
 einem Beispiel aus unserem Code. Was RegRadar fachlich tut, steht in
 [fachkonzept.md](fachkonzept.md). Die Benennungsregeln sind in
