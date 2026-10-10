@@ -1,0 +1,196 @@
+# Keyword groups for the pre-filter (ADR-0004, ADR-0010).
+# Searched fields: title, abstract, descriptors, subject areas.
+# - terms: substring, case-insensitive ("Wertpapier" hits "Wertpapierhandel")
+# - acronyms: exact case with word boundaries ("Bank" misses "Datenbank")
+# - exclude: substring anywhere in the procedure drops all hits of the group
+# The filter only saves LLM costs: it should miss nothing relevant and
+# accepts false hits in return.
+
+groups:
+  dora_ict:
+    label: DORA/IKT
+    terms:
+      - operationale Resilienz
+      - operationalen Resilienz
+      - digitale Resilienz
+      - IKT-Risik
+      - IKT-Dienstleist
+      - IKT-Drittdienstleist
+      - Finanzmarktdigitalisierung
+    acronyms: [DORA, IKT]
+
+  ai_act:
+    label: AI Act
+    terms:
+      - künstliche Intelligenz
+      - künstlicher Intelligenz
+      - Artificial Intelligence
+      - KI-Verordnung
+      - KI-Marktüberwachung
+    acronyms: [KI, AI Act, KI-VO]
+
+  aml_sanctions:
+    label: Geldwäsche/Sanktionen
+    terms:
+      - Geldwäsche
+      - Terrorismusfinanzierung
+      - Transparenzregister
+      - wirtschaftlich Berechtigte
+      - Vermögensabschöpfung
+      - Finanzsanktion
+      - Sanktionsdurchsetzung
+      - Sanktionsliste
+      - Sanktionspaket
+      - Embargo
+    acronyms: [GwG, AMLA, AMLR, AMLD, FIU]
+
+  banking_supervision:
+    label: Bankaufsicht/Eigenkapital
+    terms:
+      - Kreditinstitut
+      - Kreditwesen
+      - Bankenaufsicht
+      - Bankaufsicht
+      - Bankenunion
+      - Bankenabwicklung
+      - Abwicklungsmechanismus
+      - Einlagensicherung
+      - Eigenkapitalanforderung
+      - Eigenmittel
+      - Basel III
+      - Sparkasse
+      - Genossenschaftsbank
+    acronyms: [Bank, Banken, KWG, CRR, CRD, SSM, SRM, BRRD]
+
+  insurance_supervision:
+    label: Versicherungsaufsicht
+    terms:
+      - Versicherungsaufsicht
+      - Versicherungsunternehmen
+      - Versicherer
+      - Rückversicher
+      - Lebensversicher
+      - private Krankenversicherung
+      - Versicherungsvertrieb
+      - Versicherungsvermittl
+      - Solvabilität
+      - Solvency
+      - Pensionsfonds
+      - Pensionskasse
+      - betriebliche Altersversorgung
+      - private Altersvorsorge
+      - Elementarschaden
+      - Pflichtversicherung
+    acronyms: [VAG, IDD, PKV, EIOPA]
+
+  securities_capital_markets:
+    label: Wertpapiere/Kapitalmarkt
+    terms:
+      - Wertpapier
+      - Kapitalmarkt
+      - Kapitalanlage
+      - Kapitalverwaltungsgesellschaft
+      - Investmentfonds
+      - Börse
+      - Derivat
+      - Marktmissbrauch
+      - Insiderhandel
+      - Leerverkäuf
+      - Spar- und Investitionsunion
+      - Zukunftsfinanzierung
+    acronyms: [MiFID, MiFIR, WpHG, KAGB, ESMA, OGAW, AIFM, EMIR, ELTIF]
+
+  payments_crypto:
+    label: Zahlungsverkehr/Krypto
+    terms:
+      - Zahlungsverkehr
+      - Zahlungsdienst
+      - Zahlungskonto
+      - Echtzeitüberweisung
+      - Instant Payment
+      - Lastschrift
+      - Kartenzahlung
+      - Bargeld
+      - digitaler Euro
+      - digitalen Euro
+      - E-Geld
+      - Krypto
+      - Blockchain
+    acronyms: [PSD2, PSD3, PSR, ZAG, SEPA, MiCA, MiCAR, KMAG]
+
+  esg:
+    label: ESG
+    terms:
+      - Nachhaltigkeitsbericht
+      - nachhaltige Finanz
+      - Sustainable Finance
+      - Taxonomie
+      - Offenlegungsverordnung
+      - Klimarisik
+      - grüne Anleihe
+      - Green Bond
+      - Lieferkettengesetz
+      - Lieferkettensorgfalt
+    acronyms: [ESG, CSRD, CSDDD, CS3D, SFDR, LkSG]
+
+  financial_supervision:
+    label: Finanzaufsicht allgemein
+    terms:
+      - Finanzaufsicht
+      - Finanzdienstleist
+      - Finanzmarkt
+      - Finanzinstitut
+      - Finanzsektor
+      - Finanzbranche
+      - Finanzstabilität
+      - Bundesbank
+    acronyms: [BaFin, EBA, ESRB, EZB, FinDAG]
+
+  consumer_protection_finance:
+    label: Verbraucherschutz Finanzen
+    terms:
+      - Verbraucherkredit
+      - Verbraucherdarlehen
+      - finanzieller Verbraucherschutz
+      - Finanzberatung
+      - Anlageberatung
+      - Provisionsverbot
+      - Kontogebühr
+      - Kontoentgelt
+      - Dispozins
+      - Überziehungszins
+      - Basiskonto
+      - Schufa
+      - Bonitätsprüfung
+      - Kreditwürdigkeit
+      - Inkasso
+    acronyms: [CCD]
+
+  cyber:
+    label: Cyber
+    terms:
+      - Cyber
+      - IT-Sicherheit
+      - Informationssicherheit
+      - Datensicherheit
+      - Hackerangriff
+      - Ransomware
+      - Sicherheitslücke
+      - kritische Infrastruktur
+      - kritischer Infrastruktur
+    acronyms: [NIS2, NIS-2, BSI, KRITIS]
+    exclude:
+      - Cybermobbing
+      - Cybergrooming
+
+  accounting_reporting:
+    label: Rechnungslegung/Meldewesen
+    terms:
+      - Rechnungslegung
+      - Bilanzrichtlinie
+      - Jahresabschluss
+      - Abschlussprüf
+      - Wirtschaftsprüf
+      - Meldewesen
+      - aufsichtliche Meldung
+    acronyms: [HGB, IFRS, FISG, BilRUG, AReG]
