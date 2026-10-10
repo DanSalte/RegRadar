@@ -139,6 +139,26 @@ gleich sind. Unveränderlich.
 - `Window` in `core/domain/window.py` (Zeitraum: Start, Ende, Feld). Prüft
   selbst, dass Start nicht nach Ende liegt.
 - `Descriptor` in `core/domain/procedure.py` (Schlagwort mit Typ)
+- `KeywordGroup` und `KeywordHit` in `core/domain/keyword_matcher.py`
+  (Keyword-Gruppe; Treffer mit Gruppe, Begriff und Feld)
+
+### Domain Service
+
+Fachliche Logik, die zu keinem einzelnen Objekt gehört. Ohne I/O.
+**Bei uns:** `KeywordMatcher` in `core/domain/keyword_matcher.py`. Er bekommt
+die Keyword-Gruppen und liefert für einen Vorgang die Treffer
+(`match(procedure) -> list[KeywordHit]`). Woher die Gruppen kommen, weiß er
+nicht.
+
+### Konfiguration
+
+Regeln, die ein Mensch festlegt, liegen versioniert unter `config/` und werden
+per PR geändert (ADR-0010).
+**Bei uns:** `config/keywords.yaml` mit den Keyword-Gruppen.
+`load_keyword_groups()` in `entrypoints/keyword_config.py` liest die Datei,
+prüft sie mit Pydantic und macht daraus `KeywordGroup`-Objekte. Fehlt die
+Datei oder ist sie ungültig, bricht der Lauf mit `ConfigurationError` ab
+(ADR-0007).
 
 ### Use Case
 
@@ -285,6 +305,7 @@ lassen sich auch Fehlerfälle wie 429, 401 und Netzwerkfehler gezielt testen.
 src/regradar/
 ├── core/                           Core
 │   ├── domain/                     Fachbegriffe
+│   │   ├── keyword_matcher.py      Domain Service KeywordMatcher, KeywordGroup, KeywordHit
 │   │   ├── procedure.py            Entity Procedure, Value Object Descriptor
 │   │   └── window.py               Value Object Window (Zeitraum)
 │   └── application/                Abläufe
@@ -307,8 +328,12 @@ src/regradar/
 │   └── jsonl_dead_letter_store.py  Adapter JsonlDeadLetterStore
 └── entrypoints/                    Driving Adapter und Composition Root
     ├── cli.py                      regradar ingest-dip
+    ├── keyword_config.py           config/keywords.yaml laden und prüfen
     ├── settings.py                 DIP_API_KEY aus Umgebung/.env
     └── logging_config.py           structlog, JSON
+
+config/
+└── keywords.yaml                   Keyword-Gruppen für den Vorfilter
 
 tests/                              spiegelt src/
 ├── core/                           Tests für domain/ und application/
@@ -342,7 +367,7 @@ tests/                              spiegelt src/
 | Neuer Speicher, z. B. DuckDB | Neuer Adapter, der einen Port erfüllt (z. B. `DuckdbRawStore` oder ein neuer Port für gespeicherte Vorgänge) |
 | Hilfsfunktion für einen Adapter | Als Baustein in den Ordner des Adapters; nutzen ihn mehrere Adapter, nach `adapters/shared/`. Docstring `Building block (…): …` |
 | Neues Fachmerkmal eines Vorgangs | Feld in `Procedure`, Abbildung im DTO, Eintrag im Fachkonzept |
-| Neue Branche oder neue Suchbegriffe | Konfiguration, nicht Code (Keyword-Vorfilter ab T01b) |
+| Neue Branche oder neue Suchbegriffe | `config/keywords.yaml`, nicht Code |
 | Neue fachliche Regel | `core/domain/` (gilt immer) oder `core/application/` (gehört zu einem Ablauf) |
 
 ## Bekannte Abweichungen von ADRs
@@ -350,5 +375,8 @@ tests/                              spiegelt src/
 - ADR-0003 nennt die Quell-Schnittstelle `iter_documents(window)`. Umgesetzt
   ist `ProcedureSource` mit `fetch(window)` und `parse(raw)`. Die Trennung
   erlaubt, Rohdaten zu speichern, bevor geprüft wird.
+- ADR-0004 nennt `KeywordMatcher.match(doc) -> {gruppe: [felder]}`.
+  Umgesetzt ist `match(procedure) -> list[KeywordHit]` mit Gruppe, Begriff und
+  Feld, weil ADR-0010 den getroffenen Begriff speichert.
 - ADR-0007: Erneuter Versuch zurückgestellter Dokumente und Freshness-Alarm
   sind noch nicht umgesetzt.

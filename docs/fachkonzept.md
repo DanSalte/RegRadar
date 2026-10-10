@@ -96,6 +96,27 @@ zwei Merkmalen:
 
 Beide nutzen denselben Ablauf (ADR-0003).
 
+### Keyword-Gruppe und Treffer
+
+Eine **Keyword-Gruppe** bündelt Suchbegriffe zu einem Thema, z. B.
+„Geldwäsche/Sanktionen“ mit „Geldwäsche“, „Transparenzregister“ und „GwG“.
+Die Gruppen stehen in einer Konfigurationsdatei, nicht im Code.
+
+| Begriffsart | Regel | Beispiel |
+|---|---|---|
+| **Begriff** | trifft als Wortteil, Groß-/Kleinschreibung egal | „Wertpapier“ trifft „Wertpapierhandel“ |
+| **Abkürzung** | trifft nur als ganzes Wort, Schreibweise exakt | „KWG“ trifft „KWG-Novelle“, nicht „kwg“ |
+| **Ausschluss** | steht er irgendwo im Vorgang, zählt die Gruppe dort nicht | „Cybermobbing“ hebt die Gruppe Cyber auf |
+
+Durchsucht werden Titel, Abstract, Deskriptoren und Sachgebiete. Ein
+**Treffer** hält fest, welche Gruppe mit welchem Begriff in welchem Merkmal
+angeschlagen hat. So lässt sich später je Begriff ablesen, ob er relevante
+Vorgänge findet oder nur Fehltreffer (ADR-0010).
+
+Der Vorfilter spart nur Kosten für die spätere Einordnung. Er soll möglichst
+nichts Relevantes übersehen und nimmt dafür Fehltreffer in Kauf. Ob ein
+Vorgang für eine Zielgruppe relevant ist, entscheidet erst die Einordnung.
+
 ## Ablauf eines Laufs
 
 ```mermaid
@@ -138,7 +159,7 @@ nächsten Lauf erneut versuchen, Alarm bei ausbleibenden neuen Daten.
 
 | Schritt | Fachlicher Inhalt |
 |---|---|
-| Keyword-Vorfilter (T01b) | Suchbegriffe je Themengruppe (z. B. „Geldwäsche“, „DORA“) markieren potenziell relevante Vorgänge. Gruppen sind konfigurierbar. |
+| Vorfilter im Lauf (T04) | Nur Vorgänge mit Treffern werden gespeichert und eingeordnet. |
 | Einordnung (ADR-0002) | Jeder Vorgang wird **einmal** nach festen Merkmalen eingeordnet: Branche, Regelwerk/Thema, Stand. Später auch betroffene Funktion (Compliance, IT, Risiko …). |
 | Profile | Ein Profil ist ein Filter über diese Merkmale, z. B. „Branche = Versicherer und Thema = IT-Sicherheit“. Ein neues Profil braucht keine neue Einordnung. |
 | Weitere Quellen | EUR-Lex, später ggf. Aufsichtsbehörden |
