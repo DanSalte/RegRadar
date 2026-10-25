@@ -1,6 +1,6 @@
 # T01b – Keyword-Vorfilter: Matcher und Konfiguration
 
-- **Status:** Offen
+- **Status:** Erledigt
 - **Schätzung:** 1 h
 - **Abhängig von:** T01
 - **ADRs:** 0002, 0004, 0009, 0010
@@ -35,7 +35,7 @@ Konfiguration, nicht Code.
 
 ## Akzeptanzkriterien
 
-- [ ] `make check` grün
-- [ ] Tests für: Wortgrenzen bei Abkürzungen, Groß-/Kleinschreibung,
+- [x] `make check` grün
+- [x] Tests für: Wortgrenzen bei Abkürzungen, Groß-/Kleinschreibung,
       `exclude`, Treffer in jedem Feld, ungültige Konfiguration
-- [ ] Fachkonzept und Architektur-Doku aktualisiert
+- [x] Fachkonzept und Architektur-Doku aktualisiert
