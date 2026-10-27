@@ -11,8 +11,9 @@ coverage.xml
 # Secrets
 .env
 
-# Daten-Cache
+# Daten-Cache und lokale Auswertungen
 data/raw/
+reports/
 
 # Lokale Entwicklungsumgebung (Dev-Container, Claude Code)
 .devcontainer/

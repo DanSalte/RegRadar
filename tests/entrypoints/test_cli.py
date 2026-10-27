@@ -13,6 +13,7 @@ from regradar.entrypoints import cli
 from tests.factories import raw_dip
 
 WINDOW = Window(start=date(2026, 9, 1), end=date(2026, 9, 30))
+PROJECT_KEYWORDS = Path(__file__).parents[2] / "config" / "keywords.yaml"
 
 
 @pytest.fixture
@@ -23,6 +24,8 @@ def paths(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> cli.Paths:
     return cli.Paths(
         raw_dir=tmp_path / "data" / "raw",
         dead_letters=tmp_path / "data" / "raw" / "dead_letters.jsonl",
+        keywords=PROJECT_KEYWORDS,
+        report=tmp_path / "reports" / "dip_exploration.md",
     )
 
 
@@ -122,6 +125,73 @@ def test_missing_api_key_is_systemic(
 
     with pytest.raises(ConfigurationError, match="DIP_API_KEY"):
         run(paths, FakeDip())
+
+
+def report(paths: cli.Paths, dip: FakeDip) -> int:
+    return cli.report_dip(
+        WINDOW,
+        refresh=False,
+        paths=paths,
+        transport=httpx.MockTransport(dip),
+        sleep=lambda _: None,
+    )
+
+
+def test_report_dip_writes_report(paths: cli.Paths) -> None:
+    unrelated = raw_dip(
+        "2", titel="Haushaltsgesetz", abstract=None, deskriptor=[]
+    )
+    dip = FakeDip(raw_dip("1"), unrelated)
+
+    code = report(paths, dip)
+
+    assert code == cli.EXIT_OK
+    text = paths.report.read_text(encoding="utf-8")
+    assert "- Vorgänge gesamt: 2" in text
+    assert "| DORA/IKT | 1 | 50,0 % |" in text
+
+
+def test_report_dip_checks_keywords_before_calling_the_api(
+    paths: cli.Paths, tmp_path: Path
+) -> None:
+    dip = FakeDip(raw_dip("1"))
+    broken = cli.Paths(
+        raw_dir=paths.raw_dir,
+        dead_letters=paths.dead_letters,
+        keywords=tmp_path / "missing.yaml",
+        report=paths.report,
+    )
+
+    with pytest.raises(ConfigurationError, match="keyword configuration"):
+        report(broken, dip)
+
+    assert dip.requests == []
+
+
+def test_report_dip_writes_no_report_for_failed_run(paths: cli.Paths) -> None:
+    dip = FakeDip(raw_dip("1"), raw_dip("2", titel=None))
+
+    code = report(paths, dip)
+
+    assert code == cli.EXIT_RUN_FAILED
+    assert not paths.report.exists()
+
+
+def test_main_dispatches_report_dip(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls: list[Window] = []
+
+    def fake(window: Window, *, refresh: bool, paths: cli.Paths) -> int:
+        calls.append(window)
+        return cli.EXIT_OK
+
+    monkeypatch.setattr(cli, "report_dip", fake)
+
+    code = cli.main(
+        ["report-dip", "--start", "2026-09-01", "--end", "2026-09-30"]
+    )
+
+    assert code == cli.EXIT_OK
+    assert calls == [WINDOW]
 
 
 def test_finish_detects_unreconciled_run() -> None:

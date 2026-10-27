@@ -17,13 +17,20 @@ from regradar.adapters.dip.dip_procedure_source import (
 from regradar.adapters.dip.rate_limit import RateLimiter
 from regradar.adapters.jsonl_dead_letter_store import JsonlDeadLetterStore
 from regradar.adapters.jsonl_raw_store import JsonlRawStore
+from regradar.adapters.markdown_exploration_report import (
+    render_exploration_report,
+)
+from regradar.adapters.shared.file_writer import write_file_atomically
 from regradar.core.application.errors import ConfigurationError, SystemicError
+from regradar.core.application.explore import explore
 from regradar.core.application.ingest import (
     IngestDependencies,
+    IngestResult,
     RunSummary,
     ingest,
 )
 from regradar.core.domain.window import Window
+from regradar.entrypoints.keyword_config import load_keyword_groups
 from regradar.entrypoints.logging_config import configure_logging
 from regradar.entrypoints.settings import Settings
 
@@ -40,6 +47,8 @@ HTTP_TIMEOUT_SECONDS = 30.0
 class Paths:
     raw_dir: Path = Path("data/raw")
     dead_letters: Path = Path("data/raw/dead_letters.jsonl")
+    keywords: Path = Path("config/keywords.yaml")
+    report: Path = Path("reports/dip_exploration.md")
 
 
 def main(argv: Sequence[str] | None = None) -> int:
@@ -47,8 +56,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     window = _window(parser, args, date.today())
     configure_logging()
+    commands = {"ingest-dip": ingest_dip, "report-dip": report_dip}
     try:
-        return ingest_dip(window, refresh=args.refresh, paths=Paths())
+        return commands[args.command](
+            window, refresh=args.refresh, paths=Paths()
+        )
     except SystemicError:
         log.exception("run_aborted")
         return EXIT_ABORTED
@@ -62,6 +74,43 @@ def ingest_dip(
     transport: httpx.BaseTransport | None = None,
     sleep: Callable[[float], None] = time.sleep,
 ) -> int:
+    result = _ingest(
+        window, refresh=refresh, paths=paths, transport=transport, sleep=sleep
+    )
+    return _finish(result.summary)
+
+
+def report_dip(
+    window: Window,
+    *,
+    refresh: bool,
+    paths: Paths,
+    transport: httpx.BaseTransport | None = None,
+    sleep: Callable[[float], None] = time.sleep,
+) -> int:
+    # Load the configuration first so that a broken file aborts before any
+    # API call.
+    groups = load_keyword_groups(paths.keywords)
+    result = _ingest(
+        window, refresh=refresh, paths=paths, transport=transport, sleep=sleep
+    )
+    code = _finish(result.summary)
+    if code != EXIT_OK:
+        return code
+    report = explore(window, result.procedures, groups)
+    write_file_atomically(paths.report, render_exploration_report(report))
+    log.info("report_written", path=str(paths.report))
+    return code
+
+
+def _ingest(
+    window: Window,
+    *,
+    refresh: bool,
+    paths: Paths,
+    transport: httpx.BaseTransport | None,
+    sleep: Callable[[float], None],
+) -> IngestResult:
     with httpx.Client(
         base_url=API_BASE_URL,
         timeout=HTTP_TIMEOUT_SECONDS,
@@ -78,8 +127,7 @@ def ingest_dip(
             raw_store=JsonlRawStore(paths.raw_dir, "dip_procedure"),
             dead_letters=JsonlDeadLetterStore(paths.dead_letters),
         )
-        result = ingest(window, deps, refresh=refresh)
-    return _finish(result.summary)
+        return ingest(window, deps, refresh=refresh)
 
 
 def _api_key() -> str:
@@ -135,16 +183,27 @@ def _positive_int(value: str) -> int:
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="regradar")
     commands = parser.add_subparsers(dest="command", required=True)
-    ingest_cmd = commands.add_parser(
-        "ingest-dip", help="Fetch DIP procedures and store the raw data"
+    _add_window_arguments(
+        commands.add_parser(
+            "ingest-dip", help="Fetch DIP procedures and store the raw data"
+        )
     )
-    span = ingest_cmd.add_mutually_exclusive_group(required=True)
+    _add_window_arguments(
+        commands.add_parser(
+            "report-dip",
+            help="Write the exploration report for DIP procedures",
+        )
+    )
+    return parser
+
+
+def _add_window_arguments(command: argparse.ArgumentParser) -> None:
+    span = command.add_mutually_exclusive_group(required=True)
     span.add_argument("--months", type=_positive_int)
     span.add_argument("--start", type=date.fromisoformat)
-    ingest_cmd.add_argument("--end", type=date.fromisoformat)
-    ingest_cmd.add_argument(
+    command.add_argument("--end", type=date.fromisoformat)
+    command.add_argument(
         "--refresh",
         action="store_true",
         help="Fetch from the API even if stored raw data exists",
     )
-    return parser
