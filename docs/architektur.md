@@ -111,6 +111,11 @@ sequenceDiagram
     CLI-->>U: Log run_summary und Exit-Code
 ```
 
+`regradar report-dip` läuft genauso, lädt aber vorher `config/keywords.yaml`
+(fehlerhafte Konfiguration bricht ab, bevor die API gefragt wird). Nach einem
+erfolgreichen Lauf erzeugt `explore()` die Kennzahlen, und der Report landet in
+`reports/dip_exploration.md` (gitignored).
+
 **Exit-Codes:**
 - `0`: erfolgreich, ggf. mit Warnung bei einzelnen Fehlern
 - `1`: Fehlerquote über 5 % oder Bilanz geht nicht auf
@@ -167,6 +172,10 @@ koordiniert Domain-Objekte und Ports, enthält aber keine Technik.
 **Bei uns:** `ingest()` in `core/application/ingest.py`: Rohdaten laden oder
 abholen, jedes Dokument prüfen, Fehlerhaftes zurückstellen, Doppeltes
 verwerfen, Bilanz (`RunSummary`) ziehen.
+Außerdem `explore()` in `core/application/explore.py`: wendet den
+`KeywordMatcher` auf die Vorgänge eines Zeitraums an und zählt Treffer,
+Felder, Vorgangstypen und Metadaten-Abdeckung (`ExplorationReport`). Das
+Ergebnis sind reine Daten, kein Markdown.
 
 ### Port
 
@@ -225,6 +234,7 @@ Baustein erfüllt keinen Port und wird nie vom Core aufgerufen.
 | `adapters/dip/api_dto.py` | `DipProcedureDto`, `DipPageDto`, `DipDescriptorDto` | `DipProcedureSource` | DIP-Antworten prüfen (DTO) |
 | `adapters/dip/rate_limit.py` | `RateLimiter` | `DipProcedureSource` | höchstens 1 Anfrage pro Sekunde |
 | `adapters/dip/web_url.py` | `procedure_web_url()` | `DipProcedureSource` | Link zur DIP-Webseite eines Vorgangs |
+| `adapters/markdown_exploration_report.py` | `render_exploration_report()` | `cli.py` (`report-dip`) | `ExplorationReport` als Markdown mit Quellenangabe (ADR-0005) |
 
 ### Composition Root
 
@@ -315,6 +325,7 @@ src/regradar/
 │       │   ├── dead_letter_store.py Port DeadLetterStore
 │       │   └── raw_document.py     Typ RawDocument (ungeprüfte Rohdaten)
 │       ├── errors.py               Fehlerklassen (systemisch / einzelnes Dokument)
+│       ├── explore.py              Use Case explore(), ExplorationReport
 │       └── ingest.py               Use Case ingest(), RunSummary
 ├── adapters/                       Driven Adapter und ihre Bausteine
 │   ├── dip/
@@ -325,9 +336,10 @@ src/regradar/
 │   ├── shared/
 │   │   └── file_writer.py          Baustein: write_file_atomically()
 │   ├── jsonl_raw_store.py          Adapter JsonlRawStore
-│   └── jsonl_dead_letter_store.py  Adapter JsonlDeadLetterStore
+│   ├── jsonl_dead_letter_store.py  Adapter JsonlDeadLetterStore
+│   └── markdown_exploration_report.py Baustein: Report als Markdown
 └── entrypoints/                    Driving Adapter und Composition Root
-    ├── cli.py                      regradar ingest-dip
+    ├── cli.py                      regradar ingest-dip, regradar report-dip
     ├── keyword_config.py           config/keywords.yaml laden und prüfen
     ├── settings.py                 DIP_API_KEY aus Umgebung/.env
     └── logging_config.py           structlog, JSON
