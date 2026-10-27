@@ -1,6 +1,6 @@
 # T01c – Explorations-Report
 
-- **Status:** Offen
+- **Status:** Erledigt
 - **Schätzung:** 1 h
 - **Abhängig von:** T01b
 - **ADRs:** 0004, 0005
@@ -29,6 +29,6 @@ die Taxonomie festgelegt wird.
 
 ## Akzeptanzkriterien
 
-- [ ] `make check` grün
-- [ ] Report aus einem `--months 1`-Lauf erzeugt, im PR angehängt
-- [ ] Architektur-Doku aktualisiert
+- [x] `make check` grün
+- [x] Report aus einem `--months 1`-Lauf erzeugt, im PR angehängt
+- [x] Architektur-Doku aktualisiert
